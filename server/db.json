@@ -1,0 +1,29 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "status": 0,
+      "description": "Complete the React project setup"
+    },
+    {
+      "id": "2",
+      "status": 0,
+      "description": "Fix the App component to remove unused imports"
+    },
+    {
+      "id": "3",
+      "status": 0,
+      "description": "Ensure the server is running with the correct db.json configuration"
+    },
+    {
+      "id": "4",
+      "status": 1,
+      "description": "Update the vite.config.js to include tailwindcss plugin"
+    },
+    {
+      "id": "5",
+      "status": 1,
+      "description": "Modify index.html to set the correct title and favicon"
+    }
+  ]
+}
