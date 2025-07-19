@@ -28,7 +28,7 @@ const All = () => {
                 <NavBar pageStatus={pageStatus} />
                 <div className='px-10 py-5'>
                     <AddBar handleApi={handleApi} />
-                    <List pageStatus={pageStatus} data={data} />
+                    <List pageStatus={pageStatus} data={data} handleApi={handleApi}/>
                 </div>
             </div>
         </div>
