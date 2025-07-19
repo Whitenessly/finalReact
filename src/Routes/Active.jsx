@@ -6,11 +6,11 @@ import List from '../Components/List'
 const Active = () => {
     const [data, setData] = React.useState([])
     const handleApi = () => {
-        fetch('http://localhost:4000/tasks')
+        fetch('https://mindx-mockup-server.vercel.app/api/resources/tasksData?apiKey=6855203daa0c8c0805c3bd3d')
             .then(response => response.json())
             .then(res => {
-                // console.log(data);
-                setData(res)
+                // console.log(res.data.data);
+                setData(res.data.data)
             })
             .catch(error => {
                 console.error(error);

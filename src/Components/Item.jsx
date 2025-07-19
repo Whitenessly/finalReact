@@ -4,13 +4,14 @@ import { DeleteOutlined } from '@ant-design/icons'
 const Item = (props) => {
     // console.log(props.task);
     const onCheck = async (e) => {
-        e.preventDefault()
+        // e.preventDefault()
         const updatedTask = {
             ...props.task,
             status: (props.task.status === 0) ? 1 : 0
         }
+        console.log(updatedTask);
 
-        await fetch(`http://localhost:4000/tasks/${props.task.id}`, {
+        await fetch(`https://mindx-mockup-server.vercel.app/api/resources/tasksData/${props.task._id}?apiKey=6855203daa0c8c0805c3bd3d`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -22,8 +23,9 @@ const Item = (props) => {
     }
 
     const onDelete = async (e) => {
-        e.preventDefault()
-        await fetch(`http://localhost:4000/tasks/${props.task.id}`, {
+        console.log(props.task._id);
+        // e.preventDefault()
+        await fetch(`https://mindx-mockup-server.vercel.app/api/resources/tasksData/${props.task._id}?apiKey=6855203daa0c8c0805c3bd3d`, {
             method: 'DELETE',
         })
         props.handleApi()

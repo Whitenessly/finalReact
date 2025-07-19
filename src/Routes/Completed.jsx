@@ -6,11 +6,11 @@ import { DeleteOutlined } from '@ant-design/icons'
 const Completed = () => {
     const [data, setData] = React.useState([])
     const handleApi = () => {
-        fetch('http://localhost:4000/tasks')
+        fetch('https://mindx-mockup-server.vercel.app/api/resources/tasksData?apiKey=6855203daa0c8c0805c3bd3d')
             .then(response => response.json())
             .then(res => {
-                // console.log(data);
-                setData(res)
+                // console.log(res.data.data);
+                setData(res.data.data)
             })
             .catch(error => {
                 console.error(error);
@@ -23,14 +23,15 @@ const Completed = () => {
     const pageStatus = 3
 
     const clearAll = async (e) => {
-        e.preventDefault()
+        // e.preventDefault()
         for (let i = 0; i < data.length; i++) {
             if (data[i].status === 1) {
-                await fetch(`http://localhost:4000/tasks/${data[i].id}`, {
+                await fetch(`https://mindx-mockup-server.vercel.app/api/resources/tasksData/${data[i]._id}?apiKey=6855203daa0c8c0805c3bd3d`, {
                     method: 'DELETE',
                 })
             }
         }
+        handleApi()
     }
 
     return (
